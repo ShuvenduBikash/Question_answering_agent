@@ -1,0 +1,13 @@
+import keras
+from keras.utils.data_utils import get_file
+
+
+if __name__ == '__main__':
+    try:
+        path = get_file('babi-tasks-v1-2.tar.gz',
+                        origin='https://s3.amazonaws.com/text-datasets/babi_tasks_1-20_v1-2.tar.gz')
+    except:
+        print('Error downloading dataset, please download it manually:\n'
+              '$ wget http://www.thespermwhale.com/jaseweston/babi/tasks_1-20_v1-2.tar.gz\n'
+              '$ mv tasks_1-20_v1-2.tar.gz ~/.keras/datasets/babi-tasks-v1-2.tar.gz')
+        raise
